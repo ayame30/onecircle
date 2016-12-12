@@ -1,9 +1,22 @@
-$img: '../img/img.jpg';
+$img: '../img/bg1.jpg';
+$bg-a: '../img/bg1.jpg';
+$bg-b: '../img/bg2.jpg';
+$bg-c: '../img/bg3.jpg';
+$bg-d: '../img/bg4.jpg';
+$bg-e: '../img/bg5.jpg';
+$bg-f: '../img/bg6.jpg';
+$chi-font: 'source-han-sans-traditional';
+$eng-font: 'open-sans';
 html, body {
   height: 100%;
   min-height: 100%;
   padding: 0;
   margin: 0;
+  font-family: $chi-font, $eng-font;
+  font-family: "source-han-sans-traditional",sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  color: #fff;
 }
 .intro {
   height: 100%;
@@ -13,9 +26,9 @@ html, body {
   text-align: center;
   position: relative;
   .glow-logo {
-    width: 66%;
-    height: 200px;
-    margin-top: 10%;
+    width: 70%;
+    height: 155px;
+    margin-top: 15.3%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -23,6 +36,28 @@ html, body {
     position: absolute;
     margin-top: 30px;
     width: 100%;
+  }
+  #intro-text-1 {
+    margin-top: 2px;
+    font-size: 23px;
+    letter-spacing: 0.35em;
+  }
+  #intro-text-2 {
+    box-sizing: border-box;
+    padding: 0 50px 0 110px;
+    font-size: 0;
+    top: 50%;
+    margin-top: 12px;
+  }
+  #intro-text-3 {
+    opacity: 0.798123;
+    padding: 0 8%;
+    font-size: 24px;
+    top: 50%;
+    margin-top: 20px;
+    line-height: 38px;
+    letter-spacing: 0.2em;
+    box-sizing: border-box;
   }
   #intro-text-2, #intro-text-3 {
     opacity: 0;
@@ -34,14 +69,23 @@ html, body {
     width: 100%;
     text-align: center;
     bottom: 10%;
+    margin-bottom: 5px;
     .btn {
       cursor: pointer;
-      width: 170px;
-      margin: 0 20px;
+      width: 195px;
+      margin: 0 22px;
       border: 1px solid #fff;
-      padding: 5px 10px;
+      padding: 9px 0;
+      text-align: center;
       background: transparent;
       color: #fff;
+      font-family: "open-sans";
+      font-weight: bold;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      i {
+        font-weight: normal;
+      }
       &.btn-join-us {
         background-color: rgba(255, 255, 255, 0.3);
         border: none;
@@ -51,43 +95,56 @@ html, body {
   }
   .a-left-bottom {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: 14px;
+    left: 10px;
     width: 12px;
-    font-size: 16px;
+    font-size: 12px;
     word-wrap: break-word;
+    line-height: 16px;
     color: #fff;
     display: block;
     cursor: pointer;
   }
   .a-right-bottom {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 6px;
+    right: 4px;
     width: auto;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 0.3em;
     color: #fff;
     display: block;
     cursor: pointer;
   }
 }
+.word-container {
+  display: inline-block;
+
+}
 .word {
   color: #fff;
-  display: inline-block;;
-  width: 250px;
+  display: inline-block;
+  width: 400px;
+  text-align: left;
   .big-word {
     display: inline-block;
-    font-size: 40px;
+    font-size: 82px;
+    line-height: 72px;
     position: relative;
+    font-weight: 900;
+    font-style: italic;
+    font-family: $eng-font;
+    margin-bottom: 34px;
     &:before, &:after {
       position: absolute;
       content: '';
       width: 1px;
       height: 0;
-      border-bottom: 22px solid #fff;
-      right: -5px;
-      top: 0;
+      border-bottom: 35px solid #fff;
+      right: -16px;
+      top: 6px;
       transform: rotate(-25deg);
+
     }
     &:after {
       transform: rotate(25deg);
@@ -96,14 +153,34 @@ html, body {
     }
   }
   .meaning {
-    margin-left: 10px;
+    margin-left: 30px;
     text-align: left;
     display: inline-block;
+    font-size: 26px;
+    line-height: 26px;
+    letter-spacing: 0.25em;
+    vertical-align: top;
+    width: 70%;
     .title {
       display: block;
+      vertical-align: middle;
+      margin-top: 16px;
+      b {
+        font-family: $eng-font;
+        font-weight: bold;
+        font-size: 23px;
+        line-height: 26px;
+        vertical-align: bottom;
+        letter-spacing: 0.33em;
+      }
     }
     .desc {
       display: block;
+      font-size: 13px;
+      width: 100%;
+      line-height: 23px;
+      letter-spacing: 0.39em;
+      margin-top: 4px;
     }
   }
 }
@@ -122,10 +199,10 @@ header {
   .logo {
     display: inline-block;
     height: 100%;
-    width: 60%;
+    width: 70%;
     img {
       width: 100%;
-      height: 50px;
+      height: 30px;
       background: #ccc;
     }
   }
@@ -133,31 +210,35 @@ header {
     height: 55px;
     background: #fff;
     z-index: 2;
-    padding: 20px 0;
+    padding: 36px 0 9px 0;
     overflow: visible;
   }
   nav {
     font-size: 12px;
-    width: 40%;
+    width: 30%;
     display: inline-block;
     vertical-align: top;
     a {
       display: inline-block;
       width: 100%;
-      padding: 0 20px;
-      margin-bottom: 30px;
-      font-size: 14px;
+      padding: 0 0 0 54px;
+      margin-bottom: 9px;
+      font-size: 13px;
       position: relative;
+      letter-spacing: 0.25em;
+      line-height: 28px;
       cursor: pointer;
       box-sizing: border-box;
       overflow: visible;
+      color: #000;
+      white-space: nowrap;
       &:before, &:after {
         position: absolute;
         content: '';
         width: 1px;
         height: 0;
-        border-bottom: 8px solid #000;
-        left: 10px;
+        border-bottom: 16px solid #000;
+        left: 43px;
         top: 0;
         transform: rotate(-25deg);
       }
@@ -177,12 +258,34 @@ header {
   text-align: center;
   position: relative;
   text-align: center;
+  &.section-a { background-image: url($bg-a); }
+  &.section-b { background-image: url($bg-b); }
+  &.section-c { background-image: url($bg-c); }
+  &.section-d { background-image: url($bg-d); }
+  &.section-e { background-image: url($bg-e); }
+  &.section-f { background-image: url($bg-f); }
 }
 #section-content {
   position: absolute;
   width: 500px;
-  height: 50%;
+  height: 250px;
   background: #000;
   left: calc(50% - 250px);
   top: 270%;
+}
+.footer {
+  position: absolute;
+  top: 350%;
+  margin-top: -50px;
+  height: 50px;
+  width: 100%;
+  font-size: 31px;
+  font-family: $chi-font;
+  font-weight: bold;
+  background: #fff;
+  z-index: 2;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.3em;
 }
