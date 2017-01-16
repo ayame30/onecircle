@@ -25,12 +25,43 @@ html, body {
   background-position: center;
   text-align: center;
   position: relative;
+  z-index: 5;
   .glow-logo {
-    width: 70%;
+    width: 768px;
     height: 155px;
-    margin-top: 15.3%;
+    overflow: visible;
+    padding-top: 10.3%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    .logo {
+      width: 100%;
+      height: 155px;
+      transition: all 1s;
+      position: relative;
+    }
+    #logo-1 {
+        width: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 1;
+    }
+    #logo-2 {
+        width: 100%;
+        position: absolute;;
+        top:0;
+        left: 0;
+        opacity: 0;
+        img {
+            width: 700px;
+        }
+    }
+    .logo.active {
+      background-color: #fff;
+      background-image: url(../img/logo_n_menu/p1_logo.svg);
+      max-height: 255px;
+    }
   }
   .intro-text {
     position: absolute;
@@ -187,6 +218,9 @@ html, body {
 .header-space {
   height: 50%;
   min-height: 200px;
+  z-index: 4;
+  position: relative;
+
 }
 header {
   font-size: 0;
@@ -200,18 +234,32 @@ header {
     display: inline-block;
     height: 100%;
     width: 70%;
-    img {
+    span {
+      display: block;
       width: 100%;
       height: 30px;
-      background: #ccc;
+      position: relative;
+      background: url(../img/logo_n_menu/logo_bg.jpg);
+      &:after {
+        content:'';
+        background: url(../img/logo_n_menu/menu_logoA.svg);
+        background-size: cover;
+        background-position: right;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .nav {
     height: 55px;
     background: #fff;
-    z-index: 2;
+    z-index: 4;
     padding: 36px 0 9px 0;
     overflow: visible;
+    position: relative;
   }
   nav {
     font-size: 12px;
@@ -221,6 +269,7 @@ header {
     a {
       display: inline-block;
       width: 100%;
+      min-width: 108px;
       padding: 0 0 0 54px;
       margin-bottom: 9px;
       font-size: 13px;
@@ -265,19 +314,22 @@ header {
   &.section-e { background-image: url($bg-e); }
   &.section-f { background-image: url($bg-f); }
 }
-#section-content {
+.part {
   position: absolute;
-  width: 500px;
-  height: 250px;
+  width: 50%;
+  height: 50%;
   background: #000;
   left: calc(50% - 250px);
-  top: 270%;
+  top: 10%;
 }
 #three-container {
   z-index: -3;
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
 }
 .footer {
   position: absolute;
@@ -294,4 +346,142 @@ header {
   cursor: pointer;
   text-align: center;
   letter-spacing: 0.3em;
+  a {
+      display: block;
+      color: #000;
+      font-size: 31px;
+      font-family: $chi-font;
+      font-weight: bold;
+      font-size: 31px;
+      width: 100%;
+      text-decoration: none;
+  }
+  .social {
+      position: absolute;
+      width: 30px;
+      height: 100px;
+      bottom: 97px;
+      right: 19px;
+      a {
+          display: block;
+          width: 30px;
+          height: 30px;
+          background: url(../img/icon/3icon_bg.jpg);
+          background-position: center;
+          background-size: cover;
+          border-radius: 30px;
+          text-align: center;
+          margin: 12px 0;
+      }
+      span {
+          display: block;
+          width: 30px;
+          height: 30px;
+          background: url(../img/icon/3icons.svg);
+          border-radius: 0;
+      }
+      span.facebook {
+          background-position: center;
+      }
+      span.phone {
+          background-position: left;
+      }
+      span.instagram {
+          background-position: right;
+      }
+  }
+}
+.fixed-container {
+    position: fixed;
+    width: 65%;
+    height: 50%;
+    left: 17.5%;
+    top: 30%;
+    z-index: 1;
+    opacity: 0;
+}
+#section-content {
+    width: 100%;
+    height: 110px;
+    background: #000;
+    position: relative;
+    transition: all 1s;
+    >* {
+        opacity: 0;
+        transition: all 3s;
+    }
+}
+#section-content.a {
+    width: 100%;
+    height: 110px;
+    background: #000;
+    position: relative;
+    .left-large-text{
+        font-size: 59px;
+        font-weight: bold;
+        font-style: italic;
+        vertical-align: top;
+        display: inline-block;
+        opacity: 1;
+        transition: all 3s;
+    }
+    .left-small-text{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: italic;
+        vertical-align: top;
+        line-height: 60px;
+        margin-left: 6px;
+        display: inline-block;
+        opacity: 1;
+        transition: all 3s;
+    }
+    .divider {
+        position: relative;
+        height: 110px;
+        padding: 1px;
+        vertical-align: top;
+        display: inline-block;
+        opacity: 1;
+        transition: all 3s;
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: 1px;
+          height: 0;
+          border-bottom: 56px solid #fff;
+          right: -16px;
+          top: 6px;
+          transform: rotate(-25deg);
+
+        }
+        &:after {
+          transform: rotate(25deg);
+          top: auto;
+          bottom: 0;
+        }
+    }
+    .right-large-text{
+        display: inline-block;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 31px;
+        vertical-align: bottom;
+        line-height: 77px;
+        margin-left: 25px;
+        opacity: 1;
+        transition: all 3s;
+
+    }
+    .text-below{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        letter-spacing: 0.3em;
+        line-height: 23px;
+        opacity: 1;
+        transition: all 3s;
+    }
 }
